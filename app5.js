@@ -31,14 +31,6 @@ app.get("/janken", (req, res) => {
   let hand = req.query.hand;
   let win = Number( req.query.win );
   let total = Number( req.query.total );
-  if( win!=NaN ) {
-    if (win>0);
-    else win=0;
-  }
-  if( total!=NaN ) {
-    if (total>0);
-    else total=0;
-  }
   console.log( {hand, win, total});
   const num = Math.floor( Math.random() * 3 + 1 );
   let cpu = '';
@@ -61,6 +53,15 @@ app.get("/janken", (req, res) => {
   }
   total += 1;
 
+  if( win!=NaN ) {
+    if (win>0);
+    else win=0;
+  }
+  if( total!=NaN ) {
+    if (total>0);
+    else total=0;
+  }
+  
   const display = {
     your: hand,
     cpu: cpu,
