@@ -52,15 +52,6 @@ app.get("/janken", (req, res) => {
     win += 1;
   }
   total += 1;
-
-  if( win!=NaN ) {
-    if (win>0);
-    else win=0;
-  }
-  if( total!=NaN ) {
-    if (total>0);
-    else total=0;
-  }
   
   const display = {
     your: hand,
