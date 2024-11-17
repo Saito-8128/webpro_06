@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>コイン投げ</title>
+</head>
+<body>
+    <p>あなたの予想は<%= ans %>です．</p>
+    <p>コインは<%= result %>です．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>回中<%= correct %>回正解しています．</p>
+    <hr>
+    <p>コインは表？裏？</p>
+    <form action="/coin">
+        <input type="radio" name="omote" id="1">
+        <label for="omote">表</label><br>
+        <input type="radio" name="ura" id="2">
+        <label for="ura">裏</label><br>
+        <input type="hidden" name="correct" value="<%= correct %>">
+        <input type="hidden" name="total" value="<%= total %>">
+        <input type="submit" values="表裏どっち？">
+    </form>   
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>クイズ</title>
+</head>
+<body>
+    <% if (num==4 && correct==4) { %>
+        <p>パーフェクト！！</p>
+    <% } else { %> 
+        <p>選んだ<%= num %>つの中<%= correct %>つは正解です．</p>
+    <% } %> 
+    <p>現在<%= total %>回目の回答です</p>
+    <hr>
+    <p>以下の選択肢から緑黄色野菜を全て選んでください．</p>
+    <form action="/quiz" method="get">
+        <input type="checkbox" name="vege1" id="1">
+        <label for="vege1">ニンジン</label><br>
+        <input type="checkbox" name="vege2" id="2">
+        <label for="vege2">キュウリ</label><br>
+        <input type="checkbox" name="vege3" id="3">
+        <label for="vege3">カボチャ</label><br>
+        <input type="checkbox" name="vege4" id="4">
+        <label for="vege4">トマト</label><br>
+        <input type="checkbox" name="vege5" id="5">
+        <label for="vege5">トウモロコシ</label><br>
+        <input type="checkbox" name="vege6" id="6">
+        <label for="vege6">ブロッコリー</label><br>
+        <input type="submit" value="送信">
+        <input type="hidden" name="total" value="<%= total %>">
+    </form>
+</body>
+</html>

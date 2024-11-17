@@ -63,4 +63,66 @@ app.get("/janken", (req, res) => {
   res.render( 'janken', display );
 });
 
+app.get("/coin", (req, res) => {
+  let correct = Number( req.query.correct );
+  let total = Number( req.query.total );
+  const num = Math.floor( Math.random() * 2 + 1 );
+  let result = '';
+  let judgement='';
+
+  if( num==1 ) result = '表';
+  else result = '裏';
+  if( req.query.omote ) ans = '表';
+  else ans = '裏';
+
+  if( result==ans ){
+    judgement='正解';
+    correct+=1
+  }else judgement='不正解';
+  total += 1;
+  
+  const display = {
+    ans: ans,
+    result: result,
+    judgement: judgement,
+    correct: correct,
+    total: total
+  }
+  res.render( 'coin', display );
+});
+
+app.get("/quiz", (req, res) => {
+  let total = Number( req.query.total )+1;
+  let num=0;
+  let correct=0;
+  if( req.query.vege1 ) {
+    num+=1;
+    correct+=1;
+  }
+  if( req.query.vege2 ) {
+    num+=1;
+  }
+  if( req.query.vege3 ) {
+    num+=1;
+    correct+=1;
+  }
+  if( req.query.vege4 ) {
+    num+=1;
+    correct+=1;
+  }
+  if( req.query.vege5 ) {
+    num+=1;
+  }
+  if( req.query.vege6 ) {
+    num+=1;
+    correct+=1;
+  }
+  const display = {
+    total: total,
+    num: num,
+    correct: correct
+  }
+  res.render('quiz', display);
+});
+
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
