@@ -112,11 +112,15 @@ display1["quiz.htmlの
 画面表示，入力受け付け"]
 display2["quiz.ejsの
 画面表示，入力受け付け"]
+total["回答数を1増やす"]
 del1["app5.jsへの変数の受け渡し"]
 del2["app5.jsからの変数の受け渡し"]
 
+
 start --> display1
 display1 --> del1
+del1 --> total
+total --> del2
 del1 --> if
 if -->|yes| correct
 correct --> del2
