@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掲示板</title>
+    <script src="./bbs.js" defer></script>
+    <link rel="stylesheet" href="./bbs.css">
+</head>
+<body>
+    <div id="bbs"></div>
+    <div>
+        <label for="name">名前：</label>
+        <input type="text" id="name">
+        <label for="name">メッセージ：</label>
+        <input type="text" id="message">
+        <button type="button" id="post">送信</button>
+    </div>
+    <div>
+        <label for="bangou">削除・更新する投稿の番号：</label>
+        <input type="text" id="bangou">
+        <button type="button" id="del">削除</button>
+        <button type="button" id="put">更新</button>
+    </div>
+    <div id="check">
+        <button type="button" id="check">投稿チェック</button>
+    </div>
+    <div>
+        <button type="button" id="change">昇順降順切り替え</button>
+    </div>
+</body>
+</html>
