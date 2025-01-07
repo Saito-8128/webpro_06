@@ -54,7 +54,7 @@ document.querySelector('#check').addEventListener('click', () => {
         console.log( number );
         if( number != value ) {
             if(row==1) {
-                bbs.innerHTML = ""
+                bbs.innerHTML = "";
                 number = 0;
                 post_num = 1;
             }
@@ -125,9 +125,12 @@ document.querySelector('#del').addEventListener('click', () => {
         }
         return response.json();
     })
-    bbs.innerHTML = ""
-    number = 0;
-    post_num = 1;
+    .then( (response) => {
+        console.log( response );
+        bbs.innerHTML = "";
+        number = 0;
+        post_num = 1;
+    });
 });
 
 document.querySelector('#put').addEventListener('click', () => {
@@ -159,10 +162,10 @@ document.querySelector('#put').addEventListener('click', () => {
         console.log( response );
         document.querySelector('#message').value = "";
         document.querySelector('#bangou').value = "";
+        bbs.innerHTML = "";
+        number = 0;
+        post_num = 1;
     });
-    bbs.innerHTML = ""
-    number = 0;
-    post_num = 1;
 });
 
 document.querySelector('#reverse').addEventListener('click', () => {
@@ -186,8 +189,11 @@ document.querySelector('#reverse').addEventListener('click', () => {
             throw new Error('Error');
         }
         return response.json();
+    })
+    .then( (response) => {
+        console.log( response );
+        bbs.innerHTML = "";
+        number = 0;
+        post_num = 1;
     });
-    bbs.innerHTML = ""
-    number = 0;
-    post_num = 1;
 });
