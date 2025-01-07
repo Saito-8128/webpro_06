@@ -158,6 +158,7 @@ document.querySelector('#put').addEventListener('click', () => {
     .then( (response) => {
         console.log( response );
         document.querySelector('#message').value = "";
+        document.querySelector('#bangou').value = "";
     });
     bbs.innerHTML = ""
     number = 0;

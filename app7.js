@@ -119,6 +119,7 @@ app.post("/delete", (req, res) => {
   const bangou = req.body.bangou;
   console.log( bangou );
   bbs.splice(Number(bangou),1);
+  res.json( {babgou: bangou} );
 });
 
 app.post("/put", (req, res) => {
@@ -128,11 +129,13 @@ app.post("/put", (req, res) => {
   console.log( [name, message, bangou] );
   bbs.splice(Number(bangou),1);
   bbs.splice(Number(bangou),0,{ name: name, message: message });
+  res.json( {number: bbs.length } );
 });
 
 app.post("/change", (req, res) => {
   row = req.body.row;
   console.log( row );
+  res.json( {row: row } );
 });
 
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
