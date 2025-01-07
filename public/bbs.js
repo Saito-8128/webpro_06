@@ -165,7 +165,7 @@ document.querySelector('#put').addEventListener('click', () => {
     post_num = 1;
 });
 
-document.querySelector('#change').addEventListener('click', () => {
+document.querySelector('#reverse').addEventListener('click', () => {
     if(row==0){
         row = 1;
     } else {
@@ -179,7 +179,7 @@ document.querySelector('#change').addEventListener('click', () => {
         }
     };
     console.log( params );
-    const url = "/change";
+    const url = "/reverse";
     fetch( url, params )
     .then( (response) => {
         if( !response.ok ) {
